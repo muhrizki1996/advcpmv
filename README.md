@@ -20,6 +20,20 @@ patch -p1 -i advcpmv-0.8-8.32.patch
 make
 ```
 
+For aarch64 architecture follow this instruction (Tested on ARMBIAN 5.84 user-built Debian GNU/Linux 9 (stretch) 5.1.0-rc1-aml-s905)
+
+```
+wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.32.tar.xz
+tar xvJf coreutils-8.32.tar.xz
+cd coreutils-8.32/
+wget https://raw.githubusercontent.com/muhrizki1996/advcpmv/master/0001-ls-restore-8.31-behavior-on-removed-directories.patch
+wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.8-8.32.patch
+patch -p1 -i 0001-ls-restore-8.31-behavior-on-removed-directories.patch
+patch -p1 -i advcpmv-0.8-8.32.patch
+./configure
+make
+```
+
 ## Usage
 
 ### Change your behaviour
